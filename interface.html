@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>מקלדת ערבית</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #2e2e2e;
+      color: #fff;
+      margin: 20px;
+    }
+    .container {
+      max-width: 600px;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      background-color: #1e1e1e;
+      color: #fff;
+      border: 1px solid #555;
+      padding: 10px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      resize: vertical;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #444;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #help-panel {
+      position: fixed;
+      top: 0;
+      right: -400px;
+      width: 350px;
+      height: 100%;
+      background-color: #1e1e1e;
+      overflow-y: auto;
+      padding: 20px;
+      transition: right 0.3s;
+      box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    }
+    #help-panel.visible {
+      right: 0;
+    }
+    .help-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .letter-table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .letter-table td {
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <label>הקלד בעברית:</label>
+    <textarea id="input" placeholder="כתוב כאן בעברית..."></textarea>
+
+    <label>הפלט בערבית:</label>
+    <textarea id="output" readonly></textarea>
+
+    <button onclick="toggleHelp()">עזרה</button>
+  </div>
+
+  <div id="help-panel">
+    <div class="help-title">להלן פירוט השיטה בה עליך לכתוב:</div>
+    <table class="letter-table">
+      <tr><td>א</td><td>ا</td></tr>
+      <tr><td>ב</td><td>ب</td></tr>
+      <tr><td>ג / ג׳</td><td>ج</td></tr>
+      <tr><td>ד</td><td>د</td></tr>
+      <tr><td>ה</td><td>ه</td></tr>
+      <tr><td>ו</td><td>و</td></tr>
+      <tr><td>ז</td><td>ز</td></tr>
+      <tr><td>ח</td><td>ح</td></tr>
+      <tr><td>ח׳</td><td>خ</td></tr>
+      <tr><td>ט</td><td>ط</td></tr>
+      <tr><td>י</td><td>ي</td></tr>
+      <tr><td>כ</td><td>ك</td></tr>
+      <tr><td>ל</td><td>ل</td></tr>
+      <tr><td>מ</td><td>م</td></tr>
+      <tr><td>נ</td><td>ن</td></tr>
+      <tr><td>ס</td><td>س</td></tr>
+      <tr><td>ע</td><td>ع</td></tr>
+      <tr><td>פ</td><td>ف</td></tr>
+      <tr><td>צ</td><td>ص</td></tr>
+      <tr><td>צ׳</td><td>ش</td></tr>
+      <tr><td>ק</td><td>ق</td></tr>
+      <tr><td>ר</td><td>ر</td></tr>
+      <tr><td>ש</td><td>ش</td></tr>
+      <tr><td>ת</td><td>ت</td></tr>
+    </table>
+  </div>
+
+  <script>
+    function toggleHelp() {
+      document.getElementById('help-panel').classList.toggle('visible');
+    }
+  </script>
+</body>
+</html>
