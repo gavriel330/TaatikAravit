@@ -1,16 +1,20 @@
 {
     "manifest_version": 3,
-    "name": "Arabic Keyboard Interface",
+    "name": "Taatik",
     "version": "1.0",
-    "description": "Type in Hebrew and convert to Arabic with guide.",
+    "description": "Type in Hebrew and convert to Arabic using the Taatik system.",
     "action": {
       "default_popup": "popup.html",
-      "default_title": "Open Arabic Keyboard"
+      "default_title": "Taatik Keyboard"
     },
     "icons": {
-      "16": "icon16.png",
-      "48": "icon48.png",
-      "128": "icon128.png"
-    }
+      "128": "Taatik128.png"
+    },
+    "web_accessible_resources": [
+      {
+        "resources": ["keyboard.js"],
+        "matches": ["<all_urls>"]
+      }
+    ]
   }
   
