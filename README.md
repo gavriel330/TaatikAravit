@@ -2,6 +2,8 @@
 
 Taatik is a Chrome extension that provides a clean, RTL-oriented UI for transliterating Hebrew characters into Arabic script. It features live conversion, helpful letter guides, and a compact standalone interface.
 
+![](https://github.com/gavriel330/TaatikAravit/blob/main/taatik_demonstration.gif)
+
 ---
 
 ### Features
@@ -11,6 +13,7 @@ Taatik is a Chrome extension that provides a clean, RTL-oriented UI for translit
 - Fully offline functionality
 - Optimized for Hebrew-speaking users
 ---
+
 ###  Transliteration Logic Attribution
 
 **All transliteration logic is derived entirely from:**
