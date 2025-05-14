@@ -3,107 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <title>מקלדת ערבית</title>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&family=Noto+Sans+Hebrew:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
   <style>
-    body {
-      font-family: sans-serif;
-      background-color: #2e2e2e;
-      color: #fff;
-      margin: 20px;
-    }
-    .container {
-      max-width: 600px;
-    }
-    textarea {
+    textarea.text-repository {
       width: 100%;
-      height: 100px;
-      background-color: #1e1e1e;
-      color: #fff;
-      border: 1px solid #555;
-      padding: 10px;
-      margin-bottom: 20px;
-      font-size: 16px;
-      resize: vertical;
+      height: auto;
+      background-color: #2c2c2c;
+      color: #ffffff;
+      border: 1px solid #777;
+      border-inline-start: 4px solid #ffffff;
+      padding: 12px;
+      font-size: 17px;
+      line-height: 1.7;
+      white-space: pre-wrap;
+      direction: rtl;
+      font-family: 'Noto Sans Hebrew','Noto Sans Arabic', Assistant, sans-serif;
+      box-sizing: border-box;
     }
-    button {
-      padding: 10px 20px;
-      background-color: #444;
-      color: white;
-      border: none;
-      cursor: pointer;
+    .text-repository-line {
+      display: flex;
+      justify-content: space-between;
+      direction: rtl;
     }
-    #help-panel {
-      position: fixed;
-      top: 0;
-      right: -400px;
-      width: 350px;
-      height: 100%;
-      background-color: #1e1e1e;
-      overflow-y: auto;
-      padding: 20px;
-      transition: right 0.3s;
-      box-shadow: -2px 0 5px rgba(0,0,0,0.5);
-    }
-    #help-panel.visible {
-      right: 0;
-    }
-    .help-title {
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-    .letter-table {
-      border-collapse: collapse;
-      width: 100%;
-    }
-    .letter-table td {
-      padding: 5px 10px;
+    .text-repository-line span {
+      display: inline-block;
+      font-family: 'Noto Sans Hebrew','Noto Sans Arabic', Assistant, sans-serif;
+      font-weight: 450;
+      font-style: normal;
+      min-width: 40%;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <label>הקלד בעברית:</label>
-    <textarea id="input" placeholder="כתוב כאן בעברית..."></textarea>
+    <label style="font-size: 18px;">הקלד בעברית:</label>
+    <textarea id="input" placeholder="כתוב כאן בעברית..." style="font-size: 18px; font-family: 'Noto Sans Hebrew', sans-serif;"></textarea>
 
-    <label>הפלט בערבית:</label>
-    <textarea id="output" readonly></textarea>
-
-    <button onclick="toggleHelp()">עזרה</button>
+    <label style="font-size: 18px;">הפלט בערבית:</label>
+    <textarea style="font-size: 22px;  font-family: 'Noto Sans Arabic', sans-serif;" id="output" readonly></textarea>
   </div>
 
   <div id="help-panel">
-    <div class="help-title">להלן פירוט השיטה בה עליך לכתוב:</div>
-    <table class="letter-table">
-      <tr><td>א</td><td>ا</td></tr>
-      <tr><td>ב</td><td>ب</td></tr>
-      <tr><td>ג / ג׳</td><td>ج</td></tr>
-      <tr><td>ד</td><td>د</td></tr>
-      <tr><td>ה</td><td>ه</td></tr>
-      <tr><td>ו</td><td>و</td></tr>
-      <tr><td>ז</td><td>ز</td></tr>
-      <tr><td>ח</td><td>ح</td></tr>
-      <tr><td>ח׳</td><td>خ</td></tr>
-      <tr><td>ט</td><td>ط</td></tr>
-      <tr><td>י</td><td>ي</td></tr>
-      <tr><td>כ</td><td>ك</td></tr>
-      <tr><td>ל</td><td>ل</td></tr>
-      <tr><td>מ</td><td>م</td></tr>
-      <tr><td>נ</td><td>ن</td></tr>
-      <tr><td>ס</td><td>س</td></tr>
-      <tr><td>ע</td><td>ع</td></tr>
-      <tr><td>פ</td><td>ف</td></tr>
-      <tr><td>צ</td><td>ص</td></tr>
-      <tr><td>צ׳</td><td>ش</td></tr>
-      <tr><td>ק</td><td>ق</td></tr>
-      <tr><td>ר</td><td>ر</td></tr>
-      <tr><td>ש</td><td>ش</td></tr>
-      <tr><td>ת</td><td>ت</td></tr>
-    </table>
+    <div class="help-title">פירוט השיטה בה עליך לכתוב:</div>
+    <div class="text-repository">
+      <div class="text-repository-line"><span  style="font-weight: bold; margin-bottom: 5px;">האותיות הפשוטות</span></div>
+      <div class="text-repository-line"><span>א</span><span>ا</span></div>
+      <div class="text-repository-line"><span>ב</span><span>ب</span></div>
+      <div class="text-repository-line"><span>ג או ג'</span><span>ج</span></div>
+      <div class="text-repository-line"><span>ד</span><span>ד</span></div>
+      <div class="text-repository-line"><span>ד'</span><span>ذ</span></div>
+      <div class="text-repository-line"><span>ה</span><span>ه</span></div>
+      <div class="text-repository-line"><span>ו</span><span>و</span></div>
+      <div class="text-repository-line"><span>ז</span><span>ز</span></div>
+      <div class="text-repository-line"><span>ח</span><span>ح</span></div>
+      <div class="text-repository-line"><span>ח'</span><span>خ</span></div>
+      <div class="text-repository-line"><span>ט</span><span>ط</span></div>
+      <div class="text-repository-line"><span>ט'</span><span>ظ</span></div>
+      <div class="text-repository-line"><span>י</span><span>ي</span></div>
+      <div class="text-repository-line"><span>כ</span><span>ك</span></div>
+      <div class="text-repository-line"><span>ל</span><span>ل</span></div>
+      <div class="text-repository-line"><span>מ</span><span>م</span></div>
+      <div class="text-repository-line"><span>נ</span><span>ن</span></div>
+      <div class="text-repository-line"><span>ס</span><span>س</span></div>
+      <div class="text-repository-line"><span>ע</span><span>ع</span></div>
+      <div class="text-repository-line"><span>ע'</span><span>غ</span></div>
+      <div class="text-repository-line"><span>פ</span><span>ف</span></div>
+      <div class="text-repository-line"><span>צ</span><span>ص</span></div>
+      <div class="text-repository-line"><span>צ'</span><span>ض</span></div>
+      <div class="text-repository-line"><span>ק</span><span>ق</span></div>
+      <div class="text-repository-line"><span>ר</span><span>ر</span></div>
+      <div class="text-repository-line"><span>ש</span><span>ش</span></div>
+      <div class="text-repository-line"><span>ת</span><span>ت</span></div>
+      <div class="text-repository-line"><span>ת'</span><span>ث</span></div>
+      <div class="text-repository-line"><span>ה~</span><span>ة</span></div>
+      <hr>
+      <div class="text-repository-line"><span style="font-weight: bold; margin-bottom: 5px;">ההרחבות לכתיב הערבי</span></div>
+      <div class="text-repository-line"><span>P</span><span>پ</span></div>
+      <div class="text-repository-line"><span>V</span><span>ڨ</span></div>
+      <hr>
+      <div class="text-repository-line"><span style="font-weight: bold; margin-bottom: 5px;">ניקוד</span></div>
+      <div class="text-repository-line"><span>A</span><span>◌َ פתחה</span></div>
+      <div class="text-repository-line"><span>I</span><span>◌ِ כסרה</span></div>
+      <div class="text-repository-line"><span>U</span><span>◌ُ דמה</span></div>
+      <div class="text-repository-line"><span>:</span><span>◌ْ סוקון</span></div>
+      <div class="text-repository-line"><span>*</span><span>◌ّ שדה</span></div>
+      <div class="text-repository-line"><span>AA</span><span>◌ً תנווין פתחה</span></div>
+      <div class="text-repository-line"><span>II</span><span>◌ٍ תנווין כסרה</span></div>
+      <div class="text-repository-line"><span>UU</span><span>◌ٌ תנווין דמה</span></div>
+      <hr>
+      <div class="text-repository-line"><span style="font-weight: bold; margin-bottom: 5px;">המזה, ומיני אליפים</span></div>
+      <div class="text-repository-line"><span>אA</span><span>أ</span></div>
+      <div class="text-repository-line"><span>אI</span><span>إ</span></div>
+      <div class="text-repository-line"><span>אU</span><span>أُ</span></div>
+      <div class="text-repository-line"><span>א:</span><span>أْ</span></div>
+      <div class="text-repository-line"><span>א#</span><span>ى</span></div>
+      <div class="text-repository-line"><span>א~</span><span>ٱ</span></div>
+      <div class="text-repository-line"><span>א~~</span><span>آ</span></div>
+      <hr>
+      <div class="text-repository-line"><span style="font-weight: bold; margin-bottom: 5px;">המזה בודדה \ קורסי אלהמזה</span></div>
+      <div class="text-repository-line"><span>ו@</span><span>ؤ</span></div>
+      <div class="text-repository-line"><span>י@</span><span>ئ</span></div>
+      <div class="text-repository-line"><span>@</span><span>ﺀ</span></div>
+      <hr>
+      <div class="text-repository-line"><span style="font-weight: bold; margin-bottom: 5px;">המזה בודדה \ קורסי אלהמזה</span></div>
+      <div class="text-repository-line"><span>_</span><span>ـ</span></div>
+      <div class="text-repository-line"><span style="font-weight: bold; margin-bottom: 5px;">ספרות</span></div>
+      <div class="text-repository-line"><span>0-9</span><span>٠-٩</span></div>
+    </div>
   </div>
 
-  <script>
-    function toggleHelp() {
-      document.getElementById('help-panel').classList.toggle('visible');
-    }
-  </script>
+  <script src="keyboard.js"></script>
+  <script src="popup.js"></script>
 </body>
 </html>
